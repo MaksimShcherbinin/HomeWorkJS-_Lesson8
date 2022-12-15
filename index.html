@@ -82,7 +82,7 @@
         [...bodyEl.children].forEach(element => {
             element.addEventListener('click', function (e) {
                 if (e.target) {
-                    if (Array.from(e.target.classList).some(item => item = 'super_element')) {
+                    if (Array.from(e.target.classList).some(item => item === 'super_element')) {
                         console.log(`"super_element" присутствует в элементе "${e.target.tagName.toLowerCase()}"`);
                     } else {
                         console.log(`"super_element" отсутствует в элементе "${e.target.tagName.toLowerCase()}"`);
@@ -109,6 +109,14 @@
         Если клик был не по кнопке, то ничего выводить не нужно.
         Необходимо использовать делегирование.
         */
+
+        const listEl = document.querySelector('ul');
+
+        listEl.addEventListener('click', function (e) {
+            if (e.target.tagName === 'BUTTON') {
+                console.log(e.target.textContent);
+            };
+        });
 
         /*
         6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
