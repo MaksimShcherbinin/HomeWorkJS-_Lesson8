@@ -82,7 +82,6 @@
         [...bodyEl.children].forEach(element => {
             element.addEventListener('click', function (e) {
                 if (e.target) {
-
                     if (Array.from(e.target.classList).some(item => item = 'super_element')) {
                         console.log(`"super_element" присутствует в элементе "${e.target.tagName.toLowerCase()}"`);
                     } else {
@@ -96,6 +95,12 @@
         4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
         "Вы навели на textarea."
         */
+
+        const textareaEl = document.querySelector('textarea');
+
+        textareaEl.addEventListener('mouseover', function (e) {
+            console.log('Вы навели на textarea');
+        });
 
         /*
         5. Необходимо повесить событие клика на тег ul. В обработчике события в
